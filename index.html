@@ -192,7 +192,19 @@ a{color:var(--accent)}
 .icon-btn{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--muted);transition:background var(--fast),color var(--fast),transform var(--fast);flex:none}
 .icon-btn:hover{background:var(--hover);color:var(--text)}
 .icon-btn:active{transform:scale(.92)}
-.search{flex:1;display:flex;align-items:center;gap:9px;height:40px;padding:0 14px;border-radius:20px;background:var(--search);color:var(--muted);transition:box-shadow var(--fast),background var(--fast);margin:6px 12px 8px}
+.search{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  height:40px;
+  flex: 0 0 40px; /* <-- вот это исправляет баг */
+  padding:0 14px;
+  border-radius:20px;
+  background:var(--search);
+  color:var(--muted);
+  transition:box-shadow var(--fast),background var(--fast);
+  margin:6px 12px 8px;
+}
 .search:focus-within{box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 35%,transparent)}
 .search input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--text);font-size:14.5px}
 .search input::placeholder{color:var(--muted)}
